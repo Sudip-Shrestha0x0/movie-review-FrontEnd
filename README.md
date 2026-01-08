@@ -2,6 +2,8 @@
 
 This is the frontend for our movie review site, built with Vue.js and Vite.
 
+[View Live Site](https://splendorous-cajeta-68d552.netlify.app/)
+
 ## Type of Review Site
 Movie Reviews
 
