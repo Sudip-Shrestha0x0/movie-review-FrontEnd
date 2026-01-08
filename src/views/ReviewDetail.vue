@@ -19,20 +19,20 @@
         <div class="review-hero">
           <div class="review-image-container">
             <img 
-              :src="review.imageUrl" 
-              :alt="review.title"
+              :src="review.attributes.imageUrl" 
+              :alt="review.attributes.title"
               class="review-image"
             />
             <div class="image-overlay"></div>
           </div>
           <div class="review-header">
-            <h1 class="review-title">{{ review.title }}</h1>
+            <h1 class="review-title">{{ review.attributes.title }}</h1>
             <div class="review-meta">
-              <span class="meta-item">{{ review.releaseYear }}</span>
+              <span class="meta-item">{{ review.attributes.releaseYear }}</span>
               <span class="meta-separator">•</span>
-              <span class="meta-item">{{ review.director }}</span>
+              <span class="meta-item">{{ review.attributes.director }}</span>
               <span class="meta-separator">•</span>
-              <span class="meta-item">{{ review.genre }}</span>
+              <span class="meta-item">{{ review.attributes.genre }}</span>
             </div>
             <div class="rating-display">
               <div class="stars">
@@ -40,12 +40,12 @@
                   v-for="star in 5" 
                   :key="star"
                   class="star"
-                  :class="{ filled: star <= Math.round(review.rating / 2) }"
+                  :class="{ filled: star <= Math.round(review.attributes.rating / 2) }"
                 >
                   ★
                 </span>
               </div>
-              <span class="rating-number">{{ review.rating }}/10</span>
+              <span class="rating-number">{{ review.attributes.rating }}/10</span>
             </div>
           </div>
         </div>
@@ -53,12 +53,12 @@
         <div class="review-content">
           <div class="review-description">
             <h2 class="section-title">Synopsis</h2>
-            <p class="description-text">{{ review.description }}</p>
+            <p class="description-text">{{ review.attributes.description }}</p>
           </div>
 
           <div class="review-body">
             <h2 class="section-title">Full Review</h2>
-            <div class="review-text">{{ extractFullReviewText(review.fullReview) }}</div>
+            <div class="review-text">{{ extractFullReviewText(review.attributes.fullReview) }}</div>
           </div>
         </div>
       </article>
