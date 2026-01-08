@@ -46,10 +46,10 @@ const filteredReviews = computed(() => {
 
   const query = searchQuery.value.toLowerCase()
   return reviews.value.filter(review => {
-    const title = review.title?.toLowerCase() || ''
-    const description = review.description?.toLowerCase() || ''
-    const director = review.director?.toLowerCase() || ''
-    const genre = review.genre?.toLowerCase() || ''
+    const title = review.attributes.title?.toLowerCase() || ''
+    const description = review.attributes.description?.toLowerCase() || ''
+    const director = review.attributes.director?.toLowerCase() || ''
+    const genre = review.attributes.genre?.toLowerCase() || ''
     
     return (
       title.includes(query) ||
